@@ -622,6 +622,73 @@
             }
         }
 
+        /* Carrousel de logos */
+        .logos-carousel-container {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .logos-carousel {
+            overflow: hidden;
+            padding: 2rem 0;
+            background: linear-gradient(90deg, 
+                var(--light) 0%, 
+                transparent 10%, 
+                transparent 90%, 
+                var(--light) 100%
+            );
+        }
+        
+        .logos-track {
+            display: flex;
+            gap: 3rem;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .logos-track:hover {
+            animation-play-state: paused;
+        }
+        
+        .logo-item {
+            flex-shrink: 0;
+            width: 120px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .logo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0%);
+            transition: filter 0.3s;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
         .mobile-menu-btn {
             display: none;
             background: none;
