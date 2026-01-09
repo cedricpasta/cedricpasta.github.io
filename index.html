@@ -622,6 +622,7 @@
             }
         }
 
+        /*Carousel de logo*/
         /* Carrousel de logos */
         .logos-carousel-container {
             margin-top: 4rem;
@@ -634,7 +635,7 @@
         
         .logos-carousel {
             overflow: hidden;
-            padding: 2rem 0;
+            padding: 1rem 0;
             background: linear-gradient(90deg, 
                 var(--light) 0%, 
                 transparent 10%, 
@@ -643,13 +644,23 @@
             );
         }
         
+        .logos-carousel + .logos-carousel {
+            margin-top: 1rem;
+        }
+        
         .logos-track {
             display: flex;
             gap: 3rem;
             animation: scroll 30s linear infinite;
         }
         
-        .logos-track:hover {
+        /* Deuxième rangée décalée */
+        .logos-track-offset {
+            animation: scroll-offset 30s linear infinite;
+        }
+        
+        .logos-track:hover,
+        .logos-track-offset:hover {
             animation-play-state: paused;
         }
         
@@ -688,6 +699,17 @@
                 transform: translateX(-50%);
             }
         }
+        
+        /* Animation décalée pour la 2ème rangée */
+        @keyframes scroll-offset {
+            0% {
+                transform: translateX(-8.33%);
+            }
+            100% {
+                transform: translateX(-58.33%);
+            }
+        }
+        
         
         .mobile-menu-btn {
             display: none;
@@ -1029,7 +1051,6 @@
                 <h3>Robotique</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <div class="skill-logo">🤖</div>
                         <img class="skill-logo" src="images/logos/kuka.png" alt="KUKA">
                         <div class="skill-name">KUKA (KRL)</div>
                     </div>
@@ -1114,6 +1135,85 @@
             <h3 style="text-align: center; color: var(--dark); margin-bottom: 2rem; font-size: 1.2rem;">Technologies maîtrisées</h3>
             <div class="logos-carousel">
                 <div class="logos-track">
+                    <!-- Premier set de logos -->
+                    <div class="logo-item">
+                        <img src="images/logos/siemens.png" alt="Siemens">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/schneider.png" alt="Schneider">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/codesys.png" alt="Codesys">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/kuka.png" alt="KUKA">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/staubli.png" alt="Stäubli">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/abb.png" alt="ABB">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/ros.png" alt="ROS2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/python.png" alt="Python">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/cpp.png" alt="C++">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/matlab.png" alt="MATLAB">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/catia.png" alt="CATIA">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/opencv.png" alt="OpenCV">
+                    </div>
+                    <!-- Duplication pour effet infini -->
+                    <div class="logo-item">
+                        <img src="images/logos/siemens.png" alt="Siemens">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/schneider.png" alt="Schneider">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/codesys.png" alt="Codesys">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/kuka.png" alt="KUKA">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/staubli.png" alt="Stäubli">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/abb.png" alt="ABB">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/ros.png" alt="ROS2">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/python.png" alt="Python">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/cpp.png" alt="C++">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/matlab.png" alt="MATLAB">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/catia.png" alt="CATIA">
+                    </div>
+                    <div class="logo-item">
+                        <img src="images/logos/opencv.png" alt="OpenCV">
+                    </div>
+                </div>
+            </div>
+            <!-- Deuxième rangée DÉCALÉE -->
+            <div class="logos-carousel">
+                <div class="logos-track logos-track-offset">
                     <!-- Premier set de logos -->
                     <div class="logo-item">
                         <img src="images/logos/siemens.png" alt="Siemens">
