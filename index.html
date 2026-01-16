@@ -4,779 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tolotra Cédric RABARISON - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #0ea5e9;
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --gray: #64748b;
-            --light: #f8fafc;
-            --accent: #3b82f6;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: var(--light);
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
-        }
-
-        .hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
-            color: white;
-            padding: 4rem 2rem;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-photo-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid var(--secondary);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-            animation: fadeIn 0.8s ease-out;
-            background: var(--dark-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--secondary);
-        }
-
-        .hero-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.8rem;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero-text p {
-            font-size: 1.05rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        }
-
-        .hero-text .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.6s backwards;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark);
-        }
-
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--dark);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        .experience-grid {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .experience-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid var(--primary);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .experience-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .company-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            background: white;
-            padding: 0.5rem;
-            border-radius: 8px;
-            border: 2px solid var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            flex-shrink: 0;
-        }
-
-        .experience-info h3 {
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .experience-info .company {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .experience-info .period {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .experience-card ul {
-            list-style-position: inside;
-            color: var(--gray);
-            margin-top: 1rem;
-        }
-
-        .experience-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-gallery {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 1rem;
-            overflow-x: auto;
-            padding: 0.5rem 0;
-        }
-
-        .experience-gallery-item {
-            flex-shrink: 0;
-            width: 150px;
-            height: 110px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-            border: 2px dashed var(--gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--light);
-            font-size: 2rem;
-        }
-
-        .experience-gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .experience-gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .projects-grid {
-            display: grid;
-            gap: 2.5rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .project-header h3 {
-            font-size: 1.4rem;
-        }
-
-        .project-type {
-            padding: 0.3rem 0.8rem;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .project-gallery {
-            display: flex;
-            gap: 0.8rem;
-            padding: 1rem 1.5rem;
-            background: var(--light);
-            overflow-x: auto;
-        }
-
-        .project-gallery-item {
-            flex-shrink: 0;
-            width: 180px;
-            height: 130px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-            border: 2px dashed var(--gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            font-size: 2.5rem;
-        }
-
-        .project-gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .project-gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .project-body {
-            padding: 1.5rem;
-        }
-
-        .project-body p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .project-details {
-            margin-bottom: 1.5rem;
-        }
-
-        .project-details h4 {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.05rem;
-        }
-
-        .project-details ul {
-            list-style-position: inside;
-            color: var(--gray);
-        }
-
-        .project-details li {
-            margin-bottom: 0.3rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--light);
-        }
-
-        .tag {
-            padding: 0.3rem 0.8rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            text-align: center;
-        }
-
-        .skill-items {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.8rem;
-            border-radius: 8px;
-            background: var(--light);
-            transition: transform 0.3s;
-        }
-
-        .skill-item:hover {
-            transform: translateX(5px);
-        }
-
-        .skill-logo {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            background: white;
-            padding: 0.3rem;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .skill-name {
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .education-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary);
-        }
-
-        .education-item {
-            position: relative;
-            margin-bottom: 2rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .education-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 1.5rem;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--light);
-        }
-
-        .education-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .education-item .school {
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .education-item .year {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .contact-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-item h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary);
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /*Carousel de logo*/
-        /* Carrousel de logos */
-        .logos-carousel-container {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .logos-carousel {
-            overflow: hidden;
-            padding: 1rem 0;
-            background: linear-gradient(90deg, 
-                var(--light) 0%, 
-                transparent 10%, 
-                transparent 90%, 
-                var(--light) 100%
-            );
-        }
-        
-        .logos-carousel + .logos-carousel {
-            margin-top: 1rem;
-        }
-        
-        .logos-track {
-            display: flex;
-            gap: 3rem;
-            animation: scroll 30s linear infinite;
-        }
-        
-        /* Deuxième rangée décalée */
-        .logos-track-offset {
-            animation: scroll-offset 30s linear infinite;
-        }
-        
-        .logos-track:hover,
-        .logos-track-offset:hover {
-            animation-play-state: paused;
-        }
-        
-        .logo-item {
-            flex-shrink: 0;
-            width: 120px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .logo-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        
-        .logo-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: grayscale(0%);
-            transition: filter 0.3s;
-        }
-        
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
-        /* Animation décalée pour la 2ème rangée */
-        @keyframes scroll-offset {
-            0% {
-                transform: translateX(-8.33%);
-            }
-            100% {
-                transform: translateX(-58.33%);
-            }
-        }
-        
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--dark);
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero-photo {
-                width: 150px;
-                height: 150px;
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .project-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">TCR</div>
@@ -792,29 +23,36 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-content">
             <div class="hero-photo-container">
-                <img class="hero-photo" src="images/profile.jpg" alt="Tolotra Cédric RABARISON">
+                <div class="hero-photo">👤</div>
+                <!-- <img class="hero-photo" src="images/profile.jpg" alt="Tolotra Cédric RABARISON"> -->
             </div>
             <div class="hero-text">
                 <h1>Tolotra Cédric RABARISON</h1>
                 <p class="subtitle">Ingénieur Mécatronicien - Automatique & Robotique</p>
-                <p>Récemment diplômé en Ingénierie Mécatronique, je me spécialise dans la convergence entre la mécanique de précision et l'intelligence des systèmes automatisés. Fort d'expériences concrètes chez Segula Technologies et au sein de laboratoires de recherche, je maîtrise le cycle de développement complet : de la modélisation dynamique sous ROS2/Gazebo à la programmation d'automates industriels (Siemens, Schneider, Codesys). Passionné par la robotique de pointe, j'allie rigueur technique et curiosité pour concevoir des solutions innovantes et performantes.</p>
+                <p>Automaticien-roboticien passionné par la conception et la mise en œuvre de systèmes automatisés complexes. Expérimenté dans le développement de programmes d'automatisme, la programmation de robots industriels et l'intégration de solutions mécatroniques complètes.</p>
                 <div class="cta-buttons">
-                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#projets" class="btn btn-primary">Découvrir mes projets</a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Expériences -->
     <section id="experiences">
-        <h2>Expériences Professionnelles</h2>
+        <div class="section-header">
+            <span class="section-tag">Mon parcours</span>
+            <h2>Expériences Professionnelles</h2>
+        </div>
+        
         <div class="experience-grid">
             <div class="experience-card">
                 <div class="experience-header">
-                    <img class="company-logo" src="images/logos/segula.png" alt="Segula">
+                    <div class="company-logo">🏢</div>
                     <div class="experience-info">
                         <h3>Stagiaire R&I - Étude d'un dirigeable</h3>
                         <div class="company">Segula Technologies</div>
@@ -822,24 +60,24 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Contribution à la modélisation dynamique sur <strong>OpenModelica</strong> et à l'analyse fonctionnelle</li>
+                    <li>Contribution à la modélisation dynamique et à l'analyse fonctionnelle</li>
                     <li>Collaboration avec équipes pluridisciplinaires pour l'intégration système</li>
                     <li>Validation des choix techniques et des architectures proposées</li>
-                    <li>Intégration du modèle sur <strong>ROS2 et Gazebo</strong></li>
+                    <li>Intégration du modèle sur ROS2 et Gazebo</li>
                 </ul>
                 <div class="experience-gallery">
                     <div class="experience-gallery-item">
-                        <img src="images/experiences/s2_ros_airship.PNG" alt="Dirigeable Segula">
+                        <img src="images/experiences/s2_ros_airship.jpg" alt="Dirigeable Segula">
                     </div>
                     <div class="experience-gallery-item">
-                        <img src="images/experiences/s2_cfd.PNG" alt="Dirigeable CFD">
+                        <img src="images/experiences/s2_cfd.jpg" alt="Dirigeable CFD">
                     </div>
                 </div>
             </div>
 
             <div class="experience-card">
                 <div class="experience-header">
-                    <img class="company-logo" src="images/logos/uca.png" alt="UCA">
+                    <div class="company-logo">🎓</div>
                     <div class="experience-info">
                         <h3>Stagiaire - Système robotisé CND</h3>
                         <div class="company">Université Clermont Auvergne</div>
@@ -847,223 +85,126 @@
                     </div>
                 </div>
                 <ul>
-                    <li>Programmation avancée d'un bras <strong>KUKA KR3</strong>  pour des missions de balayage haute précision dans le cadre de Contrôles Non Destructifs (CND)</li>
-                    <li>Mise en œuvre d'une communication <strong>TCP/IP</strong> temps réel entre le contrôleur robot et un système embarqué de détection par ultrasons.</li>
-                    <li>Optimisation des trajectoires pour maximiser la couverture de scan et corrélation des données de position avec les signaux de sonde pour la génération de cartographies de défauts.</li>
+                    <li>Programmation complète d'un bras KUKA KR3 pour opérations de balayage</li>
+                    <li>Interface avec système de détection par ultrasons</li>
+                    <li>Communication TCP/IP entre robot et système de contrôle embarqué</li>
+                    <li>Optimisation des trajectoires et validation des performances</li>
                 </ul>
                 <div class="experience-gallery">
-                    <div class="experience-gallery-item">
-                        <img src="images/experiences/s1_kuka.PNG" alt="KUKA KR3">
-                    </div>
-                    <div class="experience-gallery-item">
-                        <img src="images/experiences/s1_scan.jpg" alt="Resultat Scan">
-                    </div>
-                    <div class="experience-gallery-item">
-                        <img src="images/experiences/s1_sonde.jpg" alt="Sonde">
-                    </div>
+                    <div class="experience-gallery-item">📷</div>
+                    <div class="experience-gallery-item">📷</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projets en Vitrine -->
     <section id="projets">
-        <h2>Projets Significatifs</h2>
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div class="project-header">
+        <div class="section-header">
+            <span class="section-tag">Réalisations</span>
+            <h2>Projets Significatifs</h2>
+            <p class="section-subtitle">Cliquez sur un projet pour découvrir tous les détails</p>
+        </div>
+
+        <div class="projects-showcase">
+            <!-- Projet 1 -->
+            <div class="project-showcase-card" onclick="openProject('project1')">
+                <div class="project-showcase-image">
+                    <img src="images/projets/p1_rack2_face.jpg" alt="Rayonnage">
+                    <div class="project-showcase-overlay">
+                        <span class="view-project">Voir le projet →</span>
+                    </div>
+                </div>
+                <div class="project-showcase-info">
+                    <span class="project-category">Académique</span>
                     <h3>Système de rayonnage automatisé</h3>
-                    <span class="project-type">Académique</span>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p1_rack2_face.jpg" alt="S7-1200">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p1_drawing.png" alt="Fischerteknik">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p1_scada_inked.jpg" alt="Scada">
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>Projet de programmation complète d'un système de rayonnage automatisé avec automate <strong>Siemens S7-1200</strong>.</p>
-                    <div class="project-details">
-                        <h4>Réalisations :</h4>
-                        <ul>
-                            <li>Programmation en Ladder/STL</li>
-                            <li>Intégration de capteurs et études de système</li>
-                            <li>Conception IHM et Supervision avec <strong>Node-RED</strong></li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">TIA Portal</span>
-                        <span class="tag">S7-1200</span>
-                        <span class="tag">Ladder</span>
-                        <span class="tag">SCADA</span>
-                    </div>
+                    <p>Programmation Siemens S7-1200, IHM et supervision SCADA</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Cellule robotisée ABB IRB 4600 pour brochage industriel</h3>
-                    <span class="project-type">Personnel</span>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-gallery-item">
-                        <img src="images/projets/brochage_cell.PNG" alt="Cellule">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/brochage_ihm.PNG" alt="IHM">
+            <!-- Projet 2 -->
+            <div class="project-showcase-card" onclick="openProject('project2')">
+                <div class="project-showcase-image">
+                    <div class="project-placeholder">📦</div>
+                    <div class="project-showcase-overlay">
+                        <span class="view-project">Voir le projet →</span>
                     </div>
                 </div>
-                <div class="project-body">
-                    <p>Projet personnel de cellule robotisée pour brochage industriel avec simulation complète et supervision.</p>
-                    <div class="project-details">
-                        <h4>Réalisations :</h4>
-                        <ul>
-                            <li>Modélisation et simulation complète sous RoboDK</li>
-                            <li>Communication Modbus entre automate et RoboDK</li>
-                            <li>Programmation de l'automate <strong>Codesys</strong> en LD</li>
-                            <li>Supervision avec RapidScada</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Codesys</span>
-                        <span class="tag">RoboDK</span>
-                        <span class="tag">Modbus</span>
-                        <span class="tag">RapidScada</span>
-                    </div>
+                <div class="project-showcase-info">
+                    <span class="project-category">Personnel</span>
+                    <h3>Simulation de chaînes de convoyeurs</h3>
+                    <p>Cellule robotisée avec Codesys, RoboDK et RapidScada</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
+            <!-- Projet 3 -->
+            <div class="project-showcase-card" onclick="openProject('project3')">
+                <div class="project-showcase-image">
+                    <div class="project-placeholder">🏭</div>
+                    <div class="project-showcase-overlay">
+                        <span class="view-project">Voir le projet →</span>
+                    </div>
+                </div>
+                <div class="project-showcase-info">
+                    <span class="project-category">Académique</span>
                     <h3>Automatisation chaîne de convoyeurs</h3>
-                    <span class="project-type">Académique</span>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-gallery-item">
-                        <img src="images/projets/sch_M241.PNG" alt="m241">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/sch_pivot.PNG" alt="Pivot">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/sch_kuka.PNG" alt="kuka">
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>Conception complète d'un système de test automatisé pour chaîne de convoyeurs industriels.</p>
-                    <div class="project-details">
-                        <h4>Réalisations :</h4>
-                        <ul>
-                            <li>Programmation automate Schneider <strong>M241</strong></li>
-                            <li>Développement de l'IHM</li>
-                            <li>Validation des performances</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Schneider</span>
-                        <span class="tag">M241</span>
-                        <span class="tag">Control Expert</span>
-                    </div>
+                    <p>Schneider M241, développement IHM et validation</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
+            <!-- Projet 4 -->
+            <div class="project-showcase-card" onclick="openProject('project4')">
+                <div class="project-showcase-image">
+                    <div class="project-placeholder">🤖</div>
+                    <div class="project-showcase-overlay">
+                        <span class="view-project">Voir le projet →</span>
+                    </div>
+                </div>
+                <div class="project-showcase-info">
+                    <span class="project-category">Académique</span>
                     <h3>Robots Stäubli - Pick & Place</h3>
-                    <span class="project-type">Académique</span>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p3_robotfly.PNG" alt="Robotfly">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p3_scara.PNG" alt="Scara">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/p3_gui.PNG" alt="GUI">
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>Programmation de robots Stäubli 6 axes et SCARA pour opérations de manipulation précise.</p>
-                    <div class="project-details">
-                        <h4>Réalisations :</h4>
-                        <ul>
-                            <li>Programmation <strong>VAL3</strong> de robots TX40, TX2-60, TS2-40</li>
-                            <li>Développement de séquences pick-and-place</li>
-                            <li>Intégration contrôle qualité</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Stäubli</span>
-                        <span class="tag">VAL3</span>
-                        <span class="tag">Pick&Place</span>
-                    </div>
+                    <p>Programmation VAL3, manipulation précise et contrôle qualité</p>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
+            <!-- Projet 5 -->
+            <div class="project-showcase-card" onclick="openProject('project5')">
+                <div class="project-showcase-image">
+                    <div class="project-placeholder">⚾</div>
+                    <div class="project-showcase-overlay">
+                        <span class="view-project">Voir le projet →</span>
+                    </div>
+                </div>
+                <div class="project-showcase-info">
+                    <span class="project-category">Académique</span>
                     <h3>Lanceur de balles automatique</h3>
-                    <span class="project-type">Académique</span>
-                </div>
-                <div class="project-gallery">
-                    <div class="project-gallery-item">
-                        <img src="images/projets/tourelle_catia.PNG" alt="Tourelle">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/tourelle_irl.PNG" alt="DRawing Tourel">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/tourelle_eclatee.PNG" alt="DRawing Tourel">
-                    </div>
-                    <div class="project-gallery-item">
-                        <img src="images/projets/tourelle_ucalogo.PNG" alt="Logo">
-                    </div>
-                </div>
-                <div class="project-body">
-                    <p>Développement complet d'un système mécatronique de lancement automatique de balles avec vision intégrée.</p>
-                    <div class="project-details">
-                        <h4>Réalisations :</h4>
-                        <ul>
-                            <li>Conception mécanique (CATIA V5)</li>
-                            <li>Intégration capteurs de vision</li>
-                            <li>Traitement d'images Python (OpenCV)</li>
-                        </ul>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">CATIA V5</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">OpenCV</span>
-                        <span class="tag">Impression 3D</span>
-                    </div>
+                    <p>Conception mécatronique, CAO CATIA V5 et vision Python</p>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- Compétences -->
     <section id="competences">
-        <h2>Compétences Techniques</h2>
+        <div class="section-header">
+            <span class="section-tag">Expertise</span>
+            <h2>Compétences Techniques</h2>
+        </div>
+
         <div class="skills-container">
-            
             <div class="skill-category">
                 <h3>Automatismes</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/siemens.png" alt="Siemens">
+                        <div class="skill-logo">🔧</div>
                         <div class="skill-name">Siemens TIA Portal (S7-1200/1500)</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/schneider.png" alt="Schneider">
+                        <div class="skill-logo">⚡</div>
                         <div class="skill-name">Schneider Control Expert (M241, M340)</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/codesys.png" alt="Codesys">
+                        <div class="skill-logo">💻</div>
                         <div class="skill-name">Codesys</div>
                     </div>
                     <div class="skill-item">
@@ -1077,43 +218,41 @@
                 <h3>Robotique</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/kuka.png" alt="KUKA">
-                        <div class="skill-name">KUKA (KRL)</div>
+                        <div class="skill-logo">🤖</div>
+                        <div class="skill-name">KUKA (KRL) - KR3</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/staubli.png" alt="Stäubli">
+                        <div class="skill-logo">🦾</div>
                         <div class="skill-name">Stäubli (VAL3) - TX40, TX2-60, TS2-40</div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-logo">🤖</div>
-                        <!-- <img class="skill-logo" src="images/logos/abb.png" alt="ABB"> -->
                         <div class="skill-name">ABB (Rapid)</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/ros.png" alt="ROS">
+                        <div class="skill-logo">🔬</div>
                         <div class="skill-name">ROS2 & Gazebo</div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-logo">🎯</div>
-                        <!-- <img class="skill-logo" src="images/logos/robodk.png" alt="RoboDK"> -->
                         <div class="skill-name">RoboDK</div>
                     </div>
                 </div>
             </div>
 
             <div class="skill-category">
-                <h3>Développement et Simulation</h3>
+                <h3>Développement</h3>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/python.png" alt="Python">
+                        <div class="skill-logo">🐍</div>
                         <div class="skill-name">Python (Vision, IA)</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/cpp.png" alt="C++">
+                        <div class="skill-logo">⚙️</div>
                         <div class="skill-name">C/C++ (Systèmes embarqués)</div>
                     </div>
                     <div class="skill-item">
-                        <img class="skill-logo" src="images/logos/matlab.png" alt="MATLAB">
+                        <div class="skill-logo">📊</div>
                         <div class="skill-name">MATLAB/Simulink</div>
                     </div>
                     <div class="skill-item">
@@ -1122,7 +261,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-logo">📺</div>
-                        <div class="skill-name">CAO (CATIA V5, FreeCAD)</div>
+                        <div class="skill-name">IHM & RapidScada</div>
                     </div>
                 </div>
             </div>
@@ -1132,7 +271,6 @@
                 <div class="skill-items">
                     <div class="skill-item">
                         <div class="skill-logo">👁️</div>
-                        <!-- <img class="skill-logo" src="images/logos/opencv.png" alt="OpenCV"> -->
                         <div class="skill-name">Vision industrielle (OpenCV, 2D/3D)</div>
                     </div>
                     <div class="skill-item">
@@ -1145,8 +283,7 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-logo">🎨</div>
-                        <!-- <img class="skill-logo" src="images/logos/catia.png" alt="CATIA"> -->
-                        <div class="skill-name">IHM & RapidScada</div>
+                        <div class="skill-name">CAO (CATIA V5, FreeCAD)</div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-logo">🔗</div>
@@ -1156,171 +293,51 @@
             </div>
         </div>
 
-        <!-- Carrousel de logos qui défile -->
+        <!-- Carrousel de logos -->
         <div class="logos-carousel-container">
-            <h3 style="text-align: center; color: var(--dark); margin-bottom: 2rem; font-size: 1.2rem;">Technologies maîtrisées</h3>
+            <h3>Technologies maîtrisées</h3>
             <div class="logos-carousel">
                 <div class="logos-track">
-                    <!-- Premier set de logos -->
-                    <div class="logo-item">
-                        <img src="images/logos/siemens.png" alt="Siemens">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/schneider.png" alt="Schneider">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/codesys.png" alt="Codesys">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/kuka.png" alt="KUKA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/staubli.png" alt="Stäubli">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/abb.png" alt="ABB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/ros.png" alt="ROS2">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/python.png" alt="Python">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/cpp.png" alt="C++">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/matlab.png" alt="MATLAB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/catia.png" alt="CATIA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/opencv.png" alt="OpenCV">
-                    </div>
-                    <!-- Duplication pour effet infini -->
-                    <div class="logo-item">
-                        <img src="images/logos/siemens.png" alt="Siemens">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/schneider.png" alt="Schneider">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/codesys.png" alt="Codesys">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/kuka.png" alt="KUKA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/staubli.png" alt="Stäubli">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/abb.png" alt="ABB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/ros.png" alt="ROS2">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/python.png" alt="Python">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/cpp.png" alt="C++">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/matlab.png" alt="MATLAB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/catia.png" alt="CATIA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/opencv.png" alt="OpenCV">
-                    </div>
+                    <div class="logo-item"><img src="images/logos/opencv.png" alt="OpenCV"></div>
+                    <div class="logo-item"><img src="images/logos/catia.png" alt="CATIA"></div>
+                    <div class="logo-item"><img src="images/logos/matlab.png" alt="MATLAB"></div>
+                    <div class="logo-item"><img src="images/logos/cpp.png" alt="C++"></div>
+                    <div class="logo-item"><img src="images/logos/python.png" alt="Python"></div>
+                    <div class="logo-item"><img src="images/logos/ros.png" alt="ROS2"></div>
+                    <div class="logo-item"><img src="images/logos/opencv.png" alt="OpenCV"></div>
+                    <div class="logo-item"><img src="images/logos/catia.png" alt="CATIA"></div>
+                    <div class="logo-item"><img src="images/logos/matlab.png" alt="MATLAB"></div>
+                    <div class="logo-item"><img src="images/logos/cpp.png" alt="C++"></div>
+                    <div class="logo-item"><img src="images/logos/python.png" alt="Python"></div>
+                    <div class="logo-item"><img src="images/logos/ros.png" alt="ROS2"></div>
                 </div>
             </div>
-            <!-- Deuxième rangée DÉCALÉE -->
             <div class="logos-carousel">
                 <div class="logos-track logos-track-offset">
-                    <!-- Set de logos -->
-                    <div class="logo-item">
-                        <img src="images/logos/abb.png" alt="ABB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/staubli.png" alt="Stäubli">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/kuka.png" alt="KUKA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/codesys.png" alt="Codesys">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/schneider.png" alt="Schneider">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/siemens.png" alt="Siemens">
-                    </div>
-                    <!-- Duplication pour effet infini -->
-                    <div class="logo-item">
-                        <img src="images/logos/opencv.png" alt="OpenCV">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/catia.png" alt="CATIA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/matlab.png" alt="MATLAB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/cpp.png" alt="C++">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/python.png" alt="Python">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/ros.png" alt="ROS2">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/abb.png" alt="ABB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/staubli.png" alt="Stäubli">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/kuka.png" alt="KUKA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/codesys.png" alt="Codesys">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/schneider.png" alt="Schneider">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/siemens.png" alt="Siemens">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/opencv.png" alt="OpenCV">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/catia.png" alt="CATIA">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/matlab.png" alt="MATLAB">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/cpp.png" alt="C++">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/python.png" alt="Python">
-                    </div>
-                    <div class="logo-item">
-                        <img src="images/logos/ros.png" alt="ROS2">
-                    </div>  
+                    <div class="logo-item"><img src="images/logos/abb.png" alt="ABB"></div>
+                    <div class="logo-item"><img src="images/logos/staubli.png" alt="Stäubli"></div>
+                    <div class="logo-item"><img src="images/logos/kuka.png" alt="KUKA"></div>
+                    <div class="logo-item"><img src="images/logos/codesys.png" alt="Codesys"></div>
+                    <div class="logo-item"><img src="images/logos/schneider.png" alt="Schneider"></div>
+                    <div class="logo-item"><img src="images/logos/siemens.png" alt="Siemens"></div>
+                    <div class="logo-item"><img src="images/logos/abb.png" alt="ABB"></div>
+                    <div class="logo-item"><img src="images/logos/staubli.png" alt="Stäubli"></div>
+                    <div class="logo-item"><img src="images/logos/kuka.png" alt="KUKA"></div>
+                    <div class="logo-item"><img src="images/logos/codesys.png" alt="Codesys"></div>
+                    <div class="logo-item"><img src="images/logos/schneider.png" alt="Schneider"></div>
+                    <div class="logo-item"><img src="images/logos/siemens.png" alt="Siemens"></div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Formation -->
     <section id="formation">
-        <h2>Formation Académique</h2>
+        <div class="section-header">
+            <span class="section-tag">Parcours académique</span>
+            <h2>Formation</h2>
+        </div>
+
         <div class="education-timeline">
             <div class="education-item">
                 <h3>Master 2 Automatique-Robotique</h3>
@@ -1340,8 +357,13 @@
         </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
-        <h2>Me Contacter</h2>
+        <div class="section-header">
+            <span class="section-tag">Restons en contact</span>
+            <h2>Me Contacter</h2>
+        </div>
+
         <div class="contact-container">
             <div class="contact-item">
                 <h3>📧 Email</h3>
@@ -1357,72 +379,31 @@
             </div>
             <div class="contact-item">
                 <h3>🌍 Langues</h3>
-                <p>Français (bilingue)<br>Anglais (C1 - TOEIC)<br>Allemand (A2)</p>
+                <p>Français (bilingue)<br>Anglais (C1)<br>Allemand (A2)</p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Tolotra Cédric RABARISON - Ingénieur Mécatronicien</p>
         <p>Disponibilité immédiate | Mobilité France/Europe</p>
-        <p style="margin-top: 1rem; opacity: 0.7;">Anciennement habilité B1, B2, BR | Passionné par la veille technologique robotique</p>
     </footer>
 
+    <!-- Modal pour images -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <button class="modal-close" onclick="closeModal()">&times;</button>
         <img class="modal-content" id="modalImage">
     </div>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.getElementById('nav-menu').classList.remove('active');
-                }
-            });
-        });
+    <!-- Modal pour projets -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <div id="projectModalBody"></div>
+        </div>
+    </div>
 
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        function openModal(imgSrc) {
-            document.getElementById('imageModal').classList.add('active');
-            document.getElementById('modalImage').src = imgSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').classList.remove('active');
-        }
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-                
