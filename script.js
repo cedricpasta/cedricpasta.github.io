@@ -3,7 +3,7 @@ const projectsData = {
     project1: {
         title: "Système de rayonnage automatisé",
         category: "Académique",
-        period: "Octobre 2024 - Janvier 2025",
+        //period: "Octobre 2024 - Janvier 2025",
         description: "Projet de programmation complète d'un système de rayonnage automatisé avec automate Siemens S7-1200. Intégration complète de capteurs, développement d'IHM et mise en place d'un système de supervision SCADA avec Node-RED.",
         images: [
             "images/projets/p1_rack2_face.jpg",
@@ -21,12 +21,12 @@ const projectsData = {
     },
     project2: {
         title: "Simulation de chaînes de convoyeurs",
-        category: "Personnel - En cours",
-        period: "En cours",
+        category: "Personnel",
+        //period: "En cours",
         description: "Projet personnel de développement d'une cellule robotisée complète pour brochage industriel avec simulation avancée et supervision en temps réel.",
         images: [      
             "images/projets/brochage_cell_abb.PNG",
-            "images/projets/borchage_ihm.PNG",
+            "images/projets/brochage_ihm.PNG",
         ],
         details: [
             "Programmation de chaînes de convoyeurs avec Codesys",
@@ -40,7 +40,7 @@ const projectsData = {
     project3: {
         title: "Automatisation chaîne de convoyeurs",
         category: "Académique",
-        period: "Janvier 2024 - Mars 2024",
+        //period: "Janvier 2024 - Mars 2024",
         description: "Conception complète d'un système de test automatisé pour chaîne de convoyeurs industriels avec automate Schneider.",
         images: [
             "images/projets/sch_M241.PNG",
@@ -59,7 +59,7 @@ const projectsData = {
     project4: {
         title: "Robots Stäubli - Pick & Place",
         category: "Académique",
-        period: "2024 - 2025",
+        //period: "2024 - 2025",
         description: "Programmation de robots Stäubli 6 axes et SCARA pour opérations de manipulation précise et contrôle qualité.",
         images: [
             "images/projets/p3_scara.PNG",
@@ -78,7 +78,7 @@ const projectsData = {
     project5: {
         title: "Lanceur de balles automatique",
         category: "Académique",
-        period: "2024 - 2025",
+        //period: "2024 - 2025",
         description: "Développement complet d'un système mécatronique de lancement automatique de balles avec vision par ordinateur intégrée.",
         images: [
             "images/projets/tourelle_irl.PNG",
