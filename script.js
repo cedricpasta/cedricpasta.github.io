@@ -24,22 +24,29 @@ const projectsData = {
         category: "Personnel - En cours",
         period: "En cours",
         description: "Projet personnel de développement d'une cellule robotisée complète pour brochage industriel avec simulation avancée et supervision en temps réel.",
-        images: [],
+        images: [      
+            "images/projets/brochage_cell_abb.PNG",
+            "images/projets/borchage_ihm.PNG",
+        ],
         details: [
             "Programmation de chaînes de convoyeurs avec Codesys",
-            "Communication Modbus TCP/IP entre automates et RoboDK",
+            "Communication Modbus TCP/IP entre automates et RobotStudio",
             "Supervision complète avec RapidScada",
             "Conception et simulation de cellule robotisée",
             "Optimisation des cycles de production"
         ],
-        tags: ["Codesys", "RoboDK", "Modbus TCP/IP", "RapidScada", "Simulation", "IHM"]
+        tags: ["Codesys", "RobotStudio", "RoboDK", "Modbus TCP/IP", "RapidScada", "Simulation", "IHM"]
     },
     project3: {
         title: "Automatisation chaîne de convoyeurs",
         category: "Académique",
         period: "Janvier 2024 - Mars 2024",
         description: "Conception complète d'un système de test automatisé pour chaîne de convoyeurs industriels avec automate Schneider.",
-        images: [],
+        images: [
+            "images/projets/sch_M241.PNG",
+            "images/projets/sch_kuka.PNG",
+            "images/projets/sch_pivot.PNG",
+        ],
         details: [
             "Conception complète du système de test automatisé",
             "Programmation de l'automate Schneider M241",
@@ -54,7 +61,11 @@ const projectsData = {
         category: "Académique",
         period: "2024 - 2025",
         description: "Programmation de robots Stäubli 6 axes et SCARA pour opérations de manipulation précise et contrôle qualité.",
-        images: [],
+        images: [
+            "images/projets/p3_scara.PNG",
+            "images/projets/p3_robotfly.PNG",
+            "images/projets/p3_gui.PNG",
+        ],
         details: [
             "Programmation en VAL3 de robots TX40, TX2-60, TS2-40",
             "Développement de séquences pick-and-place optimisées",
@@ -69,7 +80,11 @@ const projectsData = {
         category: "Académique",
         period: "2024 - 2025",
         description: "Développement complet d'un système mécatronique de lancement automatique de balles avec vision par ordinateur intégrée.",
-        images: [],
+        images: [
+            "images/projets/tourelle_irl.PNG",
+            "images/projets/tourelle_eclatee.PNG",
+            "images/projets/tourelle_ucalogo.PNG",
+        ],
         details: [
             "Conception mécanique optimisée pour l'impression 3D avec CATIA V5",
             "Intégration de capteurs de vision pour le tracking",
