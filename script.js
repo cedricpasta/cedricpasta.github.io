@@ -145,7 +145,7 @@ function openProject(projectId) {
         <div class="project-modal-header">
             <span class="project-category">${project.category}</span>
             <h2>${project.title}</h2>
-            // <p style="color: var(--gray); margin-top: 0.5rem;">${project.period}</p>
+            
         </div>
         <div class="project-modal-body">
             ${imagesHTML}
